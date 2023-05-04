@@ -1,0 +1,32 @@
+<h1>Carrito</h1>
+<div class="card row col-12 mb-3 p-2" *ngFor="let item of items">
+    <div class="row mb-1">
+        <div class="col-sm-4">
+            <label>Código</label>
+            <input disabled="true" class="form-control" [(ngModel)]="item.code"/>
+        </div>
+        <div class="col-sm-8">
+            <label>Descripción</label>
+            <input disabled="true" class="form-control" [(ngModel)]="item.description"/>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col-sm-3">
+            <label>Precio</label>
+            <input disabled="true" class="form-control" [(ngModel)]="item.price"/>
+        </div>
+        <div class="col-sm-3">
+            <label>Stock</label>
+            <input disabled="true" class="form-control" [(ngModel)]="item.stock"/>
+        </div>
+        <div class="col-sm-6">
+            <label>Tienda</label>
+            <select disabled="true" class="form-control" [(ngModel)]="item.storeId">
+                    <option [value]="item.storeId" >
+                        {{item.storeId}}
+                    </option>
+            </select>
+        </div>
+    </div>
+    
+</div>

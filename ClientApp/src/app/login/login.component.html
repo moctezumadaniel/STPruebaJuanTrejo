@@ -1,0 +1,26 @@
+<h1 class="h1">Iniciar Sesión</h1>
+<div class="card row col-12 mb-3 p-2" >
+    <div class="row mb-1">
+        <div class="col-sm-6">
+            <label>Correo</label>
+            <input class="form-control" [(ngModel)]="loginInfo.email"/>
+        </div>
+        <div class="col-sm-6">
+            <label>Contraseña</label>
+            <input type="password" class="form-control" [(ngModel)]="loginInfo.password"/>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col">
+            <div class="text-end">
+    
+                
+                <button 
+               (click)="login()"
+                class="btn btn-success m-1">Iniciar Sesión</button>
+            </div>
+        </div>
+
+    </div>
+</div>

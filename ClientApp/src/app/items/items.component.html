@@ -1,0 +1,90 @@
+
+
+<h1 class="h1">Artículos</h1>
+<div class="card row col-12 mb-3 p-2" >
+    <div class="row mb-1">
+        <div class="col-sm-4">
+            <label>Código</label>
+            <input class="form-control" [(ngModel)]="itemToCreate.code"/>
+        </div>
+        <div class="col-sm-8">
+            <label>Descripción</label>
+            <input class="form-control" [(ngModel)]="itemToCreate.description"/>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col-sm-3">
+            <label>Precio</label>
+            <input class="form-control" [(ngModel)]="itemToCreate.price"/>
+        </div>
+        <div class="col-sm-3">
+            <label>Stock</label>
+            <input class="form-control" [(ngModel)]="itemToCreate.stock"/>
+        </div>
+        <div class="col-sm-6">
+            <label>Tienda</label>
+            <select class="form-control" [(ngModel)]="itemToCreate.storeId">
+                    <option [value]="store.id" *ngFor="let store of stores" >
+                        {{store.branch + " - " + store.id}}
+                    </option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="text-end">
+                <button 
+                (click)="createItem()"
+                class="btn btn-success m-1">Crear</button>
+                
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="card row col-12 mb-3 p-2" *ngFor="let item of items">
+    <div class="row mb-1">
+        <div class="col-sm-4">
+            <label>Código</label>
+            <input class="form-control" [(ngModel)]="item.code"/>
+        </div>
+        <div class="col-sm-8">
+            <label>Descripción</label>
+            <input class="form-control" [(ngModel)]="item.description"/>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col-sm-3">
+            <label>Precio</label>
+            <input class="form-control" [(ngModel)]="item.price"/>
+        </div>
+        <div class="col-sm-3">
+            <label>Stock</label>
+            <input class="form-control" [(ngModel)]="item.stock"/>
+        </div>
+        <div class="col-sm-6">
+            <label>Tienda</label>
+            <select class="form-control" [(ngModel)]="item.storeId">
+                    <option [value]="store.id" *ngFor="let store of stores" >
+                        {{store.branch + " - " + store.id}}
+                    </option>
+            </select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <div class="text-end">
+                <button 
+                (click)="addToCart(item.id)"
+                class="btn btn-success m-1">Agregar a Carrito</button>
+                <button 
+                (click)="updateItem(item.id)"
+                class="btn btn-primary m-1">Actualizar</button>
+                <button class="btn btn-danger m-1"
+                (click)="deleteItem(item.id)">Eliminar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+

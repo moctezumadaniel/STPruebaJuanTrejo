@@ -1,0 +1,82 @@
+
+
+<h1 class="h1">Clientes</h1>
+<div class="card row col-12 mb-3 p-2" >
+    <div class="row mb-1">
+        <div class="col-sm-4">
+            <label>Nombres</label>
+            <input class="form-control" [(ngModel)]="customerToCreate.name"/>
+        </div>
+        <div class="col-sm-8">
+            <label>Apellidos</label>
+            <input class="form-control" [(ngModel)]="customerToCreate.lastName"/>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col-sm-4">
+            <label>Dirección</label>
+            <input class="form-control" [(ngModel)]="customerToCreate.address"/>
+        </div>
+        <div class="col-sm-4">
+            <label>Correo</label>
+            <input class="form-control" [(ngModel)]="customerToCreate.emailAddress"/>
+        </div>
+        <div class="col-sm-4">
+            <label>Contraseña</label>
+            <input type="password" class="form-control" [(ngModel)]="customerToCreate.password"/>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col">
+            <div class="text-end">
+    
+                
+                <button 
+                (click)="createCustomer()"
+                class="btn btn-success m-1">Crear</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="card row col-12 mb-3 p-2" *ngFor="let customer of customers">
+    <div class="row mb-1">
+        <div class="col-sm-4">
+            <label>Nombres</label>
+            <input class="form-control" [(ngModel)]="customer.name"/>
+        </div>
+        <div class="col-sm-8">
+            <label>Apellidos</label>
+            <input class="form-control" [(ngModel)]="customer.lastName"/>
+        </div>
+    </div>
+    <div class="row mb-1">
+        <div class="col-sm-4">
+            <label>Dirección</label>
+            <input class="form-control" [(ngModel)]="customer.address"/>
+        </div>
+        <div class="col-sm-4">
+            <label>Correo</label>
+            <input class="form-control" [(ngModel)]="customer.emailAddress"/>
+        </div>
+        <div class="col-sm-4">
+            <label>Contraseña</label>
+            <input type="password" class="form-control" [(ngModel)]="customer.password"/>
+        </div>
+    </div>
+   
+    <div class="row">
+        <div class="col">
+            <div class="text-end">
+    
+                <button 
+                (click)="updateCustomer(customer.id)"
+                class="btn btn-primary m-1">Actualizar</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+

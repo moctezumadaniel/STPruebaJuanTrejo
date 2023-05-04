@@ -1,0 +1,55 @@
+
+
+    <h1 class="h1">Tiendas</h1>
+    <div class="card row col-12 mb-3 p-2">
+        <div class="row mb-1">
+            <div class="col-sm-6">
+                <label>Sucursal</label>
+                <input class="form-control" [(ngModel)]="storeToCreate.branch"/>
+            </div>
+            <div class="col-sm-6">
+                <label>Dirección</label>
+                <input class="form-control" [(ngModel)]="storeToCreate.address"/>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="text-end">
+
+                    <button class="btn btn-success m-1"
+                    (click)="createStore()">Crear</button>
+                 
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="card row col-12 mb-3 p-2" *ngFor="let store of stores">
+        <div class="row mb-1">
+            <div class="col-sm-6">
+                <label>Sucursal</label>
+                <input class="form-control" [(ngModel)]="store.branch"/>
+            </div>
+            <div class="col-sm-6">
+                <label>Dirección</label>
+                <input class="form-control" [(ngModel)]="store.address"/>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="text-end">
+
+                    <button 
+                    (click)="updateStore(store.id)"
+                    class="btn btn-primary m-1">Actualizar</button>
+                    <button 
+                    (click)="deleteStore(store.id)"
+                    class="btn btn-danger m-1">Eliminar</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
